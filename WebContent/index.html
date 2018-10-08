@@ -1,0 +1,39 @@
+<html style="height:100%;">
+<head>
+    <title>ui-router</title>
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />    
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3" />
+    <style>
+         li{list-style:none;font-weight:bolder;}
+         li.content{list-style:decimal;}
+         .liTitle{display:inline-block;color:red;font-weight:bolder;margin-top:8px;}
+    </style>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/ag-grid-enterprise/dist/ag-grid-enterprise.min.js"></script>
+    <script src="agGrid/script/ag-grid.ctrl.js"></script>
+    <script src="agGrid/script/ag.grid.state.js"></script>
+</head>
+<body ng-app="app">
+      <div ui-view style="border:1px solid green;height:60px;"></div>
+
+      <nav style="border:1px solid lightgray;float:left;width:250px;height:70%;">
+          <!--测试多视图-->
+          <a class="liTitle">TEST Many Views</a>
+          <li class="content"><a ui-sref="home" style="color:blue;cursor:pointer;">ag-grid</a></li>
+          <li class="content"><a ui-sref="grid" style="color:blue;cursor:pointer;">ui-grid</a></li>
+          <li class="content"><a ui-sref="test" style="color:blue;cursor:pointer;">ancharts</a></li>
+
+          <!--测试嵌套路由-->
+          <a class="liTitle">TEST Inner Router</a>
+          <li class="content"><a ui-sref="" style="color:blue;cursor:pointer;">Inner Router 1</a></li>
+          <li class="content"><a ui-sref="" style="color:blue;cursor:pointer;">Inner Router 2</a></li>
+          <li class="content"><a ui-sref="" style="color:blue;cursor:pointer;">Inner Router 3</a></li>
+      </nav>
+      
+      <div ui-view="right" style="border:1px solid lightgray;height:70%;"></div>
+      <div ui-view="bottom" style="border:1px solid green;height:60px;"></div>
+</body>
+</html>
